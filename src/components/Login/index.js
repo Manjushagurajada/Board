@@ -96,7 +96,10 @@ class Login extends Component {
               <h3>Top products</h3>
               <PieChartData data={details} />
             </div>
-          <img src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713263309/Schedules_Card_1_ikfi18.png" alt="schedulers"/>
+            <img
+              src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713263309/Schedules_Card_1_ikfi18.png"
+              alt="schedulers"
+            />
           </div>
         </div>
       </div>
@@ -142,14 +145,14 @@ class Login extends Component {
                   type="text"
                   id="username"
                   name="username"
-                  placeholder="Email"
+                  placeholder="Email" required
                 />
                 <label className="label-el">Password</label>
                 <input
                   type="password"
                   id="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Password" required
                 />
                 <p className="forgot-password">Forgot password?</p>
                 <button type="submit">Sign In</button>
