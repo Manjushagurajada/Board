@@ -1,0 +1,7 @@
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Login from './components/Login'
+import './App.css'
+
+const App = () => <Login />
+
+export default App
