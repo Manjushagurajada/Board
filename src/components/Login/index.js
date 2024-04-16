@@ -1,17 +1,104 @@
 import {Component} from 'react'
 
+import PieChartData from '../PieChartData'
+
 import './index.css'
 
 class Login extends Component {
-  state = {isClicked: false}
+  state = {isClicked: false, details: {}}
+
+  componentDidMount = () => {
+    this.getData()
+  }
+
+  getData = async () => {
+    const url = 'https://apis.ccbp.in/covid19-state-wise-data'
+    const options = {
+      method: 'GET',
+    }
+    const response = await fetch(url, options)
+    const data = await response.json()
+    const updatedData = data.AN
+    this.setState({details: updatedData})
+  }
 
   renderDashBoard = () => {
+    const {details} = this.state
+    const {delta, delta7} = details
+    const {tested, vaccinated1, vaccinated2} = delta
     return (
-      <div>
+      <div className="dashboard">
         <img
           src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713250561/Navigation_nevtep.png"
           alt="filters-page"
         />
+        <div className="dashboard-second-section">
+          <div className="dashboard-text">
+            <h2>Dashboard</h2>
+            <div className="profile-container">
+              <input
+                type="search"
+                placeholder="Search"
+                className="search-bar"
+              />
+              <img
+                src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713253883/Vector_qnwflp.png"
+                alt="bell"
+                className="item"
+              />
+              <img
+                src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713254451/Mask_Group_zrrc37.png"
+                alt="profile"
+                className="item"
+              />
+            </div>
+          </div>
+          <div className="dashboard-items-container">
+            <div className="dashboard-item-1">
+              <img
+                src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713258349/Vector_1_viz3oa.png"
+                alt="revenue"
+                className="image"
+              />
+              <p>Total Revenues</p>
+              <h2 className="amount">$2,534</h2>
+            </div>
+            <div className="dashboard-item-2">
+              <img
+                src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713259305/total_transactions_icon_c5sgbe.png"
+                alt="transactions"
+                className="image"
+              />
+              <p>Total Transactions</p>
+              <h2 className="amount">{tested}</h2>
+            </div>
+            <div className="dashboard-item-3">
+              <img
+                src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713259353/Vector_2_eixlya.png"
+                alt="likes"
+                className="image"
+              />
+              <p>Total Likes</p>
+              <h2 className="amount">{vaccinated2}</h2>
+            </div>
+            <div className="dashboard-item-4">
+              <img
+                src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713259399/Vector_3_xsynwd.png"
+                alt="users"
+                className="image"
+              />
+              <p>Total Users</p>
+              <h2 className="amount">{vaccinated1}</h2>
+            </div>
+          </div>
+          <div className="dashboard-items">
+            <div className="piechart-container">
+              <h3>Top products</h3>
+              <PieChartData data={details} />
+            </div>
+          <img src="https://res.cloudinary.com/dxdudfsit/image/upload/v1713263309/Schedules_Card_1_ikfi18.png" alt="schedulers"/>
+          </div>
+        </div>
       </div>
     )
   }
@@ -56,7 +143,6 @@ class Login extends Component {
                   id="username"
                   name="username"
                   placeholder="Email"
-                  required
                 />
                 <label className="label-el">Password</label>
                 <input
@@ -64,7 +150,6 @@ class Login extends Component {
                   id="password"
                   name="password"
                   placeholder="Password"
-                  required
                 />
                 <p className="forgot-password">Forgot password?</p>
                 <button type="submit">Sign In</button>

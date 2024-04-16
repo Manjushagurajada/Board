@@ -1,0 +1,13 @@
+.recharts-responsive-container {
+  width: 30% !important;
+  height: 300px;
+  margin-top: 30px;
+}
+
+.recharts-legend-wrapper {
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: -21px !important;
+  top: 86px !important;
+}

@@ -125,3 +125,97 @@ button:hover {
 .span-el {
   color: #346bd4;
 }
+
+.dashboard {
+  display: flex;
+  width: 100%;
+  font-family: 'Roboto';
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.dashboard-second-section {
+  margin-left: 30px;
+  width: 90%;
+}
+
+.dashboard-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  margin-right: 20px;
+}
+
+.search-bar {
+  background-color: white;
+  border-radius: 10px;
+  border-width: 0px;
+  margin-right: 20px;
+}
+
+.dashboard-item h2 {
+  text-align: left;
+}
+
+.dashboard-item-1 {
+  background-color: #ddefe0;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+}
+
+.dashboard-item-2 {
+  background-color: #f4ecdd;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+}
+
+.dashboard-item-3 {
+  background-color: #efdada;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+}
+
+.dashboard-item-4 {
+  background-color: #dee0ef;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+}
+
+.dashboard-item img {
+  float: right;
+}
+
+.dashboard-items-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image {
+  float: right;
+}
+
+.amount {
+  text-align: left;
+}
+
+.piechart-container {
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  display: inline;
+}
