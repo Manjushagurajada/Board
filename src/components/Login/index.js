@@ -140,19 +140,25 @@ class Login extends Component {
           <div className="container">
             <div className="card">
               <form type="submit" onSubmit={onSubmitDetails}>
-                <label className="label-el">Email address</label>
+                <label className="label-el" htmlFor="username">
+                  Email address
+                </label>
                 <input
                   type="text"
                   id="username"
                   name="username"
-                  placeholder="Email" required
+                  placeholder="Email"
+                  required
                 />
-                <label className="label-el">Password</label>
+                <label className="label-el" htmlFor="password">
+                  Password
+                </label>
                 <input
                   type="password"
                   id="password"
                   name="password"
-                  placeholder="Password" required
+                  placeholder="Password"
+                  required
                 />
                 <p className="forgot-password">Forgot password?</p>
                 <button type="submit">Sign In</button>

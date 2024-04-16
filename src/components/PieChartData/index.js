@@ -24,7 +24,6 @@ const PieChartData = props => {
           data={pieData}
           startAngle={0}
           endAngle={360}
-          
           outerRadius="70%"
           dataKey="number"
         >
